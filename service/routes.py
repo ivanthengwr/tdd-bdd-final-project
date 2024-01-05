@@ -68,6 +68,8 @@ def check_content_type(content_type):
 ######################################################################
 # C R E A T E   A   N E W   P R O D U C T
 ######################################################################
+
+
 @app.route("/products", methods=["POST"])
 def create_products():
     """
@@ -92,12 +94,6 @@ def create_products():
     location_url = url_for("get_products", product_id=product.id, _external=True)
     # location_url = "/"  # delete once READ is implemented
     return jsonify(message), status.HTTP_201_CREATED, {"Location": location_url}
-
-
-######################################################################
-# LIST PRODUCTS
-######################################################################
-
 
 ######################################################################
 # LIST PRODUCTS
@@ -134,6 +130,7 @@ def list_products():
     results = [product.serialize() for product in products]
     app.logger.info("[%s] Products returned", len(results))
     return results, status.HTTP_200_OK
+
 ######################################################################
 # READ A PRODUCT
 ######################################################################
