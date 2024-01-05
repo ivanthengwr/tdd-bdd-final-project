@@ -169,7 +169,7 @@ class TestProductRoutes(TestCase):
     #
 
     # ----------------------------------------------------------
-    # TEST GET
+    # TEST GET READ A PRODUCT
     # ----------------------------------------------------------
     def test_get_product(self):
         """It should Geat a single Product"""
